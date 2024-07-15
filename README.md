@@ -10,7 +10,7 @@ The Real Basic Of Forensic </br>
 - 형사 사건이 아닌 민사 사건에서의 포렌식
 - 일반 기업에서의 수요가 증가
 
-<div align=center>
+<div align=center><br><br><br>
 <p>$\huge{\rm{\color{#5ad7b7}디지털\ 포렌식의\ 큰\ 유형}}$</p>
 
    침해 사고 대응 vs 증거 추출
@@ -19,7 +19,7 @@ The Real Basic Of Forensic </br>
 - 엄격한 입증 필요 X            엄격한 입증 필요 O
 </div>
 
-
+<br><br><br>
 <div align=center>
 <p>$\huge{\rm{\color{#5ad7b7}디지털\ 포렌식의\ 대상}}$</p>
 </div>
