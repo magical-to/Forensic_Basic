@@ -1,4 +1,4 @@
-# Forensic_Basic
+![image](https://github.com/user-attachments/assets/14c68428-e538-44c8-a29f-d07998f9905b)# Forensic_Basic
 The Real Basic Of Forensic </br>
 
 
@@ -52,7 +52,13 @@ Using Tools : Hxd, AutoPsy, 7zip, Everything, Notepad++, FTK-imager, Sysinternal
    
 메모리 덤프란, 메모리의 특정 시점 상태를 파일로 만들어 저장하는 것이다. 주로 켜져있는 컴퓨터를 수사할 때 사용한다.
    
-</div>
+</div><br><br><br><br>
+
+![4](https://github.com/user-attachments/assets/ea5b389c-8c60-4b4b-b308-c3a3704d9feb)
+X 표시는 삭제된 파일이라는 뜻이다. 일반적으로 폴더를 열었을 때에는 보이지가 않는다.<br><br>
+
+![5](https://github.com/user-attachments/assets/db134a71-b7da-47e5-9d4f-5ac08a690d0b)
+위 사진은 삭제된 3개의 파일을 Export한 모습이다.<br><br>
 
 
 
