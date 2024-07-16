@@ -30,8 +30,8 @@ The Real Basic Of Forensic </br>
 5. 기타 -> 데이터베이스 포렌식, 암호 포렌식, 회계 포렌식, 소스코드 포렌식 ..etc <br>
 
 
-
-
+<br><br><br><br><br><br>
+Using Tools : Hxd, AutoSpy, 7zip, Everything, Notepad++, FTK-imager<br><br>
 
 
 
