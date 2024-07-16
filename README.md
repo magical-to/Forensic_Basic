@@ -31,7 +31,7 @@ The Real Basic Of Forensic </br>
 
 
 <br><br><br><br><br><br>
-Using Tools : Hxd, AutoSpy, 7zip, Everything, Notepad++, FTK-imager<br><br>
+Using Tools : Hxd, AutoPsy, 7zip, Everything, Notepad++, FTK-imager, Sysinternal Suite(strings ,procexcp, procmon)<br><br>
 
 
 
