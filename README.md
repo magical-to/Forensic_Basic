@@ -33,9 +33,23 @@ The Real Basic Of Forensic </br>
 <br><br><br><br><br><br>
 Using Tools : Hxd, AutoPsy, 7zip, Everything, Notepad++, FTK-imager, Sysinternal Suite(strings ,procexcp, procmon)<br><br>
 
+디스크 이미징이란, 디스크를 파일의 형태로 가져오는 것을 말한다. 디스크를 분석하기 위해서는 파일의 형태로 존재해야 하므로 디스크 이미징을 수행한다. 이 때, 주의해야 할 점은 C 드라이브의 이미지를 같은 드라이브에 저장할 수 없다는 것이다. 따라서 USB의 이미지를 C 드라이브에 저장하거나, D 드라이브의 이미지를 C 드라이브에 저장하는 방식을 사용한다.<br><br>
 
+<div align=center>
+<p>$\huge{\rm{\color{#5ad7b7}디스크\ 마운트\ }}$</p>
 
+   ![1](https://github.com/user-attachments/assets/353abbc6-1342-4fc9-8674-39be1f330207)
+디스크 마운트란, 이미징된 파일을 내 컴퓨터로 등록시키는 것이다. 디스크 이미지를 다시 드라이브처럼 내 컴퓨터에 등록하여 D, E, F... 드라이브 등이 새로 생성된다.
+</div>
+<br><br><br><br>
 
+<div align=center>
+<p>$\huge{\rm{\color{#5ad7b7}Meomry\ Dump\ }}$</p>
+   
+   ![2](https://github.com/user-attachments/assets/530a6492-0f44-4a70-9a3d-f24b72e676ff)
+메모리 덤프란, 메모리의 특정 시점 상태를 파일로 만들어 저장하는 것이다. 주로 켜져있는 컴퓨터를 수사할 때 사용한다.
+   
+</div>
 
 
 
