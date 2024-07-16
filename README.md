@@ -47,6 +47,9 @@ Using Tools : Hxd, AutoPsy, 7zip, Everything, Notepad++, FTK-imager, Sysinternal
 <p>$\huge{\rm{\color{#5ad7b7}Meomry\ Dump\ }}$</p>
    
    ![2](https://github.com/user-attachments/assets/530a6492-0f44-4a70-9a3d-f24b72e676ff)
+   ![3](https://github.com/user-attachments/assets/40923045-5cae-47a9-850c-882600bd602e)
+
+   
 메모리 덤프란, 메모리의 특정 시점 상태를 파일로 만들어 저장하는 것이다. 주로 켜져있는 컴퓨터를 수사할 때 사용한다.
    
 </div>
