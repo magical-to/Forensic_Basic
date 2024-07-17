@@ -58,8 +58,12 @@ Using Tools : Hxd, AutoPsy, 7zip, Everything, Notepad++, FTK-imager, Sysinternal
 X 표시는 삭제된 파일이라는 뜻이다. 일반적으로 폴더를 열었을 때에는 보이지가 않는다.<br><br>
 
 ![5](https://github.com/user-attachments/assets/db134a71-b7da-47e5-9d4f-5ac08a690d0b)
-위 사진은 삭제된 3개의 파일을 Export한 모습이다.<br><br>
+위 사진은 삭제된 3개의 파일을 Export한 모습이다.<br><br><br>
 
+
+<div align=center>
+<p>$\huge{\rm{\color{#5ad7b7}Session\ 2. \ Memory\ Forensic}}$</p>
+</div>
 
 
 
