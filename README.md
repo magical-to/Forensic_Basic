@@ -66,9 +66,11 @@ X 표시는 삭제된 파일이라는 뜻이다. 일반적으로 폴더를 열�
 </div>
 
 ![6](https://github.com/user-attachments/assets/67e3fa94-955f-41f8-a324-72376a5a9da0)
-Gonna Using Malware - Cridex from Volatilityfoundation(https://github.com/volatilityfoundation/volatility/wiki/Memory-Samples)<br><br><br><br>
+Gonna Solve Malware - Cridex from Volatilityfoundation(https://github.com/volatilityfoundation/volatility/wiki/Memory-Samples)<br><br><br><br>
 
 
-
+Gonna Solve GrrCON 2015 #1 from [DigitalForensic] wiht CTF(ctf-d.com/challenges)<br>
+Both of Site Are Expired. So, If wanna get some file, contact me please, thx.<br>
+<br><br><br>
 
 
