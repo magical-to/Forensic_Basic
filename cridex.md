@@ -13,5 +13,7 @@ volatility -f .\cridex.vmem --profile=WinXPSP2x86 pslist 명령어를 사용한�
 pslist 명령어는 프로세스들의 리스트를 출력하는 역할을 한다.<br>
 
 ![11](https://github.com/user-attachments/assets/8c30e806-9904-4380-8f2f-68166c95eaf2)
-출력 화면<br><br><br><br>
+출력 화면<br><br><br>
 
+![12](https://github.com/user-attachments/assets/bf3d32a9-46ef-47de-9543-3cb52762dd83)
+pslist를 pslist.log 파일로 출력하여 Notepad++ 프로그램을 통해서 확인하는 화면
