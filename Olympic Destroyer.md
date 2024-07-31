@@ -9,8 +9,9 @@ An accident occured. The security team first dumped the momery of the PC that we
 ![image](https://github.com/user-attachments/assets/40021a4b-e70d-432d-85d3-d95d2c88f0a2)<br>
 (If need translation, contact me.)<br><br>
 
-**<Mail Content>**<br>
-Hello, This is the Pyeongchang Olympic Oranizing Committee. THe Olympic Games schedule, 9/23 Ver. Updated as of 10.<br>
+**Mail Content**<br>
+Hello, This is the Pyeongchang Olympic Oranizing Committee.<br>
+The Olympic Games schedule, 9/23 Ver. Updated as of 10.<br>
 Please check the contents of the attached file and notify everyone who has reserved tickets.<br>
 Game date, start time, and end time of the ticket you purchased from the [Game/Price Information] menu on the ticket website.<br>
 You can check the details of changes to the game schedule.<br>
