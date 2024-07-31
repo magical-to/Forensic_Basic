@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/66816b31-2e50-4421-a7c5-cf0b75e89e74)**Brought a problem about olympic called 'Olympic Destroyer' becuz its 2024 Paris Olympics Season. Support Korea :V**<br><br>
+**Brought a problem about olympic called 'Olympic Destroyer' becuz its 2024 Paris Olympics Season. Support Korea :V**<br><br>
 
 **Outline : On September 24, 2018, the day before the opening ceremony of the 2018 PyeongChang Olympics, An e-mail arrived to Mr OOO, the organizing committee & the ticket manager. E-mail saying that Olympic Games schedule has been updated. This is the content.<br><br>
 
