@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/edf1d839-49bb-487a-9ac0-f849b84ab474)**Brought a problem about olympic called 'Olympic Destroyer' becuz its 2024 Paris Olympics Season. Support Korea :V**<br><br>
+**Brought a problem about olympic called 'Olympic Destroyer' becuz its 2024 Paris Olympics Season. Support Korea :V**<br><br>
 
 Outline : On September 24, 2018, the day before the opening ceremony of the 2018 PyeongChang Olympics, An e-mail arrived to Mr OOO, the organizing committee & the ticket manager. E-mail saying that Olympic Games schedule has been updated. This is the content.<br><br>
 
@@ -77,6 +77,42 @@ psscan.log는 출력이 되지 않았으니 닫고 넘어가도록 한다.<br>
 psxview도 마찬가지이다.<br><br>
 
 netscan.log에서는 파워셸이 안 나와있고 외부 IP도 나와있지도 않다. 마지막에 powershell.exe가 나와있지만 얻을 수 있는건 많이 없다. 컴퓨터의 IP는 192.168.111.130으로 추정이 된다.<br><br>
+
+192.168.111.128이라는 IP도 보이는데, 이것이 같은 서버의 컴퓨터에서 공격이 들어왔다는 것인지 아니면 해커가 들어와서 이 컴퓨터를 통해서 다른 컴퓨터로 침투를 했다는 것인지가 명확해 보이지 않는다.<br><br>
+
+cmdline.log에서 의심스러워했던 프로세스 위주로 살펴보아야 한다.<br>
+![5](https://github.com/user-attachments/assets/c7b61320-c5d3-45a3-9482-d2a911a87fbf)<br>
+
+powershell도 실행될 때 커맨드가 비어있고, OlympicDestroyer3이라는 경로가 일단 확인할 수 있다.<br>
+**C:\Windows\System32\OlympicDestroyer3.exe**<br><br>
+
+_xut.exe도 경로를 확인 할 수가 있었다.<br>
+**C:\Users\VM\AppData\Local\Temp\_xut.exe**<br><br>
+
+consoles.log에서는 conhost.exe라는 프로세스가 cmd 라인으로 파워셀을 실행한 걸 볼 수 있다.<br>
+pslist.log에서 conhost.ext는 powershell.exe와 동일하게 실행되었는데, conhost라는 프로세스는 crcsrss.exe 프로세스가 실행을 한 것을 확인할 수 있다.<br><br>
+
+crcsrss.exe -> 클라이언트 서버 런타임 프로세스라고 윈도우에서 기본적으로 동작하는 프로세스라고 나와있다.<br><br>
+
+콘솔호스트라는 친구가 위의 powershell 등 프로세스들을 트리거 하지 않았을까? 생각 할 수 있다.<br><br>
+
+filescan.log에서는 OlympicDestryoer 경로를 다운해서 추출한다.<br>
+![7](https://github.com/user-attachments/assets/c4d9b19e-1fd1-4210-8e10-07b90d8120d4)<br>
+_xut도 마찬가지이다.<br><br>
+
+추출해낸 두 exe 파일을 VirusTotal(www.virustotal.com)에 업로드해보자.<br>
+![8](https://github.com/user-attachments/assets/e81fbc4d-3c4e-4b79-8ae1-b7f9738120db)<br>
+![9](https://github.com/user-attachments/assets/19b478a3-3ca4-4779-94df-1938e527ec20)<br>
+PC에서 자동으로 저 친구들을 삭제해서 올리느라 애먹었다...ㅋㅋㅋ<br><br><br>
+
+
+
+
+
+
+
+
+
 
 
 
