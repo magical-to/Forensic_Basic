@@ -106,13 +106,80 @@ _xut도 마찬가지이다.<br><br>
 PC에서 자동으로 저 친구들을 삭제해서 올리느라 애먹었다...ㅋㅋㅋ<br><br><br>
 
 
-즉, _xut.exe와 OlympicDestroyer.exe는 악성 프로세스로 체크하고 넘어가면 될 것 같다.
+즉, _xut.exe와 OlympicDestroyer.exe는 악성 프로세스로 체크하고 넘어가면 될 것 같다.<br><br>
+
+다음 프로세스인 teikv.exe와 ocxip.exe도 procdump 명령어를 사용해본다.<br>
+위 2개는 paging 오류가 뜨는데 filescan.log에 가서 검색을 해서 각각의 오프셋을 얻은 뒤, 이것을 dumpfiles를 통해 뽑아 볼 것이다.<br>
+![10](https://github.com/user-attachments/assets/9e0faaf2-f7d0-4396-8397-ca1686303eba)<br><br>
 
 
+다음으로 taskeng.exe와 conhost.exe도 시도해본다.<br><br>
+
+전부 VirusTotal(www.virustotal.com)에 업로드를 해보자면,<br>
+![620](https://github.com/user-attachments/assets/b7caa38e-9630-45f3-aa3d-728b1e46574d)<br>
+620.exe이다.<br><br>
+
+![1700](https://github.com/user-attachments/assets/67e20a98-7785-4bff-b0f8-0e3046c7d049)<br>
+1700.exe이다.<br><br>
+
+![2192](https://github.com/user-attachments/assets/61603591-bfe0-4a29-b3c1-61fc7e29f6e5)<br>
+2192.exe이다.<br><br>
+
+![ocxip](https://github.com/user-attachments/assets/86e2e15c-1e55-4953-ab56-bcb9a35f4183)<br>
+ocxip.exe이다.<br><br>
+
+![teikv](https://github.com/user-attachments/assets/40736c56-c82f-4a99-af3b-173b9b9935df)<br>
+teikv.exe이다.<br><br>
+
+620번, conhost는 6개의 프로그램에서 악성코드라고 나왔으며 1700번, OSPPSVC은 아니다. 2192번인 taskeng도 제외.<br>
+ocxip.exe와 teikv.exe는 악성코드가 확실시되는 모습이다.<br><br>
+
+**Virustotal 사용 시 주의사항**<br>
+
+1. 압축하여 파일을 업로드 할 경우 가장 범용성있는 ZIP 확장자 파일을 권장한다..<br>
+    하지만 특정한 경우를 제외하고는 압축을 하지 않고, 단일 파일로 검사를 하는 것이 가장 좋다.<br><br>
+ 
+2. 압축을 할 경우 하나의 파일만을 압축해서 검사해야 한다.<br><br>
+ 
+3. 한번 검사를 진행한 경우에도, 시간이 오래 지났다면 주기적으로 재검사를 해야한다.<br><br>
+ 
+4. 바이러스 토탈의 검사 결과를 맹신하지 말아야 한다.<br><br>
+ 
+5. 바이러스 토탈에 업로드된 파일은 커뮤니티에 공개가 되기 때문에 기밀 또는 민감한 정보는 절대 올리시면 안된다.<br><br>
+ 
+Virustotal 을 통한 분석 방법<br><br>
+
+악성 코드 분석에는 총 3가지 방법이 있다.<br>
+- 기초 분석<br>
+- 정적 분석<br>
+- 동적 분석<br><br>
+
+Virustotal 의 경우 기초 분석 영역에 사용된다.<br>
+악성 코드에 대한 기초적인 정보를 모으는 단계이며, 해당 악성 코드의 특징적인 부분을 파악한 후 뒤에 정적 분석, 동적 분석에 방향성을 결정하는 역할을 한다.<br>
+출처: https://maker5587.tistory.com/12 [Maker's security:티스토리]<br><br><br>
 
 
+위 OlympicDestroyer에서 알 수 있는 건, 악성 프로세스들이 정상적인 프로세스들을 이용해서 동작을 하기도 한다.<br>
+명령 프롬프트, cmd를 이용해서 악성 코드를 입력한다고 해서 cmd 자체가 악성 프로그램이 되는 것이 아니라 그 안에서 어떤 명령어를 입력을 했는 지를 확인하는 것이 중요하다.<br><br>
 
 
+현재 진행상황을 보자면, 4개의 악성 프로세스들을 발견하였지만 어느 경로를 통해서 들어왔는가, 어떠한 공격행위를 하는가를 확인해 볼 필요가 있겠다.<br><br>
+
+다시 처음으로 돌아가서 중요한 단서 중 하나가 뭐였냐면, 바로 'Olympic_Session_V10'이라는 엑셀 파일(.xls)이다.<br>
+엑셀은 오피스 파일이므로 오피스 관련 프로세스인 OSPPSVC.EXE를 먼저 메모리 덤프를 해볼 것이다.<br>
+![11](https://github.com/user-attachments/assets/0ee6d0fc-52bb-4b72-b181-9c61c7566912)<br><br><br>
+
+추가적으로 기존에 발견했던 4개의 악성 프로세스들 또한 strings를 해볼 예정이다.<br>
+OlympisDestroyer.log를 살펴보면 2784번째 줄에서 공격스크립트로 보이는 줄이 보인다.<br><br>
+
+![12](https://github.com/user-attachments/assets/949166e1-4b5e-4b7d-afc2-f0e974e38332)<br>
+Wsciprt = 윈도우 스크립트이며 DeleteFile = 무언가를 삭제하고 GetObject를 해서 뭐시기뭐시기...<br>
+OlympicDestroyer는 공격 스크립트 구문을 포함하고 있다는 사실을 알 수 있었다.<br><br>
+
+밑에 줄에 보면 %s\root\directory\LDAP 라는 경로가 존재하는데 LDAP가 컴퓨터가 어떤 네트워크 집단에 소속되어 있을 때, 그 집단을 관리하는 프로토콜 중 하나이기 때문에 공격자는 LDAP를 통해서 내부 네트워크를 사용하고 침입했다고 추정이 된다.<br>
+SELECT ds_cn FROM ds_computer 구문은 SQL 구문인데 내부 네트워크에 대한 정보를 불러오는 구문이 아닐까 생각이 된다.<br><br>
+
+쭉 내리다보면 계정과 어드민, 패스워드 등과 같은 정보들도 보인다.<br><br><br><br>
 
 
 
