@@ -1,4 +1,4 @@
-**Brought a memoery analasys example about Olympic called 'Olympic Destroyer' cuz its 2024 Paris Olympics Season. Support Korea :V**<br><br>
+**Brought a memoery analysis example about Olympic called 'Olympic Destroyer' cuz its 2024 Paris Olympics Season. Support Korea :V**<br><br>
 
 Outline : On September 24, 2018, the day before the opening ceremony of the 2018 PyeongChang Olympics, An e-mail arrived to Mr OOO, the organizing committee & the ticket manager. E-mail saying that Olympic Games schedule has been updated. This is the content.<br><br>
 
