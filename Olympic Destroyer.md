@@ -181,17 +181,44 @@ SELECT ds_cn FROM ds_computer 구문은 SQL 구문인데 내부 네트워크에 
 
 쭉 내리다보면 계정과 어드민, 패스워드 등과 같은 정보들도 보인다.<br><br><br><br>
 
+oxcip.exe.log 내부에서도 눈여겨볼만한 내용은 존재하지 않는다.<br>
+teikv.exe.log도 마찬가지.<br><br>
+
+![image](https://github.com/user-attachments/assets/0295b040-b110-4aeb-be0d-15a212e11297)<br>
+다만, xut.exe.log를 살펴보게 되면 cmd를 실행을 해서 명령어들을 실행하고 있다.<br>
+SeShutdownPrivilege는 종료 관련 api를 사용하기 위해서 권한을 지정해주는 것으로 구글에서 말해주고 있다.<br>
+그 밑의 줄에서 vssadmin.exe가 보이는데, 현재 볼륨 섀도 복사본 백업 및 설치된 모든 섀도 복사본 기록기 및 공급자를 표시하는 역할을 한다.<br>
+그런 vssadmin를 전부 delete shadows /all 하고 있다는 것이다.<br>
+컴퓨터가 복구가 안되도록 모두 지워버리는 것이다.<br>
+wbadmin은 명령 프롬프트에서 운영 체제, 볼륨, 파일, 폴더 및 응용 프로그램을 백업 및 복원할 수 있는 명령이다.<br>
+wbadmin이라는 명령어 또한 delete catalog -quiet 명령어를 통해 카탈로그들을 다 지워버리고 있다.<br><br>
+
+bcdedit은 부팅 로더 관련된 명령어인데 실패들은 다 무시해버리고 recovery를 no로 만들어버리고 있다.<br>
+부팅 관련 복구 기능을 전부 no 설정으로 바꿔버리고 있는 것이다.<br><br>
+
+밑에 줄에는 cl System과 cl Security라는 명령어가 있는데 event-log, 시스템 이벤트 로그와 시스템 보안 이벤트 로그를 전부 지워버리겠다라는 내용이다.<br><br>
+
+위 사진이 즉 공격 코드이고 알 수 있었던 점은,<br>
+s_xut.exe -> 공격코드 존재(복구 관련 기능을 삭제, 부팅 관련 기능을 불가하게 만들며 이벤트 로그를 삭제)<br>
+OlympicDestroyer.exe -> LDAP, 계정, 패스워드를 통해서 네트워크 망에 있는 다른 컴퓨터들로부터 무언가 공격을 이어나감<br><br><br>
 
 
+마지막으로 남은 분석은 이 악성코드가 어디에서 들어왔는 것인가에 대해서 분석을 해봐야 한다.<br><br><br>
+OSPPSVC는 마이크로소프트 오피스 관련 관리하는 프로세스인데, memdump한 것을 string하여 얻어낸 OSPPSVC.exe.log를 분석해보자.<br><br>
 
+![image](https://github.com/user-attachments/assets/9958d256-6bb0-4b35-a615-01b91a9ff6ef)<br>
+엄청나게 많은 줄이 있다. 일일이 내려서 확인을 해도 되겠지만, 위에서 얻은 단서들을 이용해보자.<br>
+공격자가 첨부파일 'Olympic_session_V10'을 이용했다는 것이다. 이를 검색해보면, <br>
+Users/VM/Desktop/oLYMPIC_sESSION_V10_이라는 파일이 .xls 형태로 존재했던 거승로 보아, 엑셀 파일이 데스크탑에 있었던 것은 확실해 보인다.<br><br>
 
-
-
-
-
-
-
-
-
-
-
+filescan.log에서 검색을 해보니 partial로 나뉘어진 zip파일과 xls 파일이 존재한다.<br>
+![image](https://github.com/user-attachments/assets/d6078d9c-37f5-43ae-b9d5-693a84ccbe2a)<br>
+이 친구를 dumpfiles를 해준다.<br>
+혹시나 에러가 생긴다면 중간에 '수정본'이라는 한국어가 있어서 안되는데 의도치 않게 'Olympic_session_V10_수정본_xls'이라는 파일 명을 알아내게 되었다.<br>
+이 친구를 수정하면서 OSPPSVC가 실행이 되고 이쪽 프로세스 관련으로 인해 OlympicDestoyer가 나온 것으로 보인다.<br>
+메모리 포렌식을 통해서는 위와 같은 내용들을 얻어낼 수 있었다.<br>
+추가적으로 분석 가능한 부분들은<br>
+- memdump -> strings<br>
+    payload(BASE64)<br>
+- 네트워크 -> LDAP.<br>
+정도가 있겠다.<br>
