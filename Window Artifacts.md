@@ -114,4 +114,4 @@ HKEY_CURRENT_CONFIG, HKCC, 시스템이 시작할 때 사용되는 하드웨어 
    경로 : HKCU\Software\Microsoft\Windows\Shell\BagMRU<br><br>
 
 
-
+.....
