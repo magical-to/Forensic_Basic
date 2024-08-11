@@ -30,6 +30,20 @@ REGA를 통해 레지스트리 파일을 분석하는 모습<br><br>
 
 ![2](https://github.com/user-attachments/assets/a5afc511-408a-4c68-a962-52e355d2fc75)<br><br>
 
+![image](https://github.com/user-attachments/assets/340c628c-b90d-446b-a29b-989952df8d9e)<br>
+rla를 할 때 d 옵션 아래에는 폴더를 주면 되고 아웃 옵션 아래에는 만들어질 아웃 폴더를 주면 된다.<br><br>
+
+raw에 있는 dirty한 레지스트리를 clean으로 넣을 것이기 때문에<br>
+![5](https://github.com/user-attachments/assets/01b23f79-5f43-4c12-a5c4-2d799acd754b)<br>
+위 사진과 같이 명령어를 입력해주면 된다.<br><br>
+
+Regripper는 github에서 <> Code를 누르고 Download Zip을 눌러 다운로드를 받으면 된다.<br>
+rr.xxe를 사용할 건데, 하이브 파일을 업로드 해줄 것이다.<br>
+![image](https://github.com/user-attachments/assets/53edcea2-c756-4840-b005-92a68a9a7add)<br>
+Hive 파일에는 위에서 rla로 뽑아낸 clean 파일을 넣은 뒤에 Report File를 설정하고 Rip! 버튼을 누르면 된다.<br>
+나온 파일들은 notepad를 이용하여 데이터를 찾아볼 수 있다.<br>
+regripper 플러그인이라고 검색을 하면 설명이 전부 다 나와있다.<br>
+
 
 
 
