@@ -42,9 +42,39 @@ rr.xxe를 사용할 건데, 하이브 파일을 업로드 해줄 것이다.<br>
 ![image](https://github.com/user-attachments/assets/53edcea2-c756-4840-b005-92a68a9a7add)<br>
 Hive 파일에는 위에서 rla로 뽑아낸 clean 파일을 넣은 뒤에 Report File를 설정하고 Rip! 버튼을 누르면 된다.<br>
 나온 파일들은 notepad를 이용하여 데이터를 찾아볼 수 있다.<br>
-regripper 플러그인이라고 검색을 하면 설명이 전부 다 나와있다.<br>
+regripper 플러그인이라고 검색을 하면 설명이 전부 다 나와있다.<br><br><br>
 
 
+**$LogFile**<br>
+저널링(Jounaling)<br>
+• 데이터 변경을 디스크에 반영하기 전에 행위를 기록하여 추후 오류 복구에 활용<br>
+  • 데이터를 기록하는 동안 시스템에 문제가 생기면 데이터가 손실됨<br>
+  • 문제가 발생하기 전에 “어떤 데이터를, 언제, 어디에 쓰는지” 기록<br>
+  • 문제가 발생하면 기록을 토대로 작업이 이루어지기 전 상태로 시스템을 복원<br><br>
+
+트랜잭션(Transaction)<br>
+• "쪼갤 수 없는 업무 처리의 최소 단위”<br>
+• 파일이나 디렉토리 생성, 수정, 삭제, MFT 레코드 변경 등
+• $LogFile: 메타데이터의 트랜잭션 저널 정보
+
+**$UsnJrnl**<br>
+• 파일이나 디렉토리에 변경 사항이 생길 때 이를 기록하는 로그 파일<br>
+• 파일 복원의 목적이 아니라, 단순 파일 작업이 있었다는 사실을 확인하기 위함<br>
+• 시간 순서대로 엔트리를 저장하고, 기본 크기는 32MB<br>
+• 하루 8시간 사용시 4~5일 정도의 데이터를 저장하고 있음<br><br>
+
+![image](https://github.com/user-attachments/assets/255529be-ff7d-4ae9-a27e-cbcdb266959a)<br>
+우선, FTK Imager를 통해 root에서 $logFile과 root/$Extend/$UsnJrnl/$J 파일을 추출해낸다.<br>
+NTFS Log Tracker를 이용해 로그파일과 J파일, MFT 파일을 넣어준다.<br>
+![1](https://github.com/user-attachments/assets/b2efd7c2-ff93-40aa-b313-67e160e1c5d4)<br>
+(UI가 깨지는 건 모두가 똑같다...)<br><br>
+
+Parse를 누르고 결과로 생성될 DB의 이름을 설정한 후, Path는 알아서 설정하면 된다.<br><br>
+
+![2](https://github.com/user-attachments/assets/48020a00-dae9-4fb3-be68-99397d2954c0)><br>
+그렇게 뽑아낸 db 파일을 DB Browser for SQLite에 업로드한다.<br>
+로그 파일과 UsnJRnl을 넣었기 때문에 각각에 대한 분석 데이터가 생성되어 있는 걸 확인할 수 있고, 로그 파일로부터는 EventTime도 확인할 수 있다.<br>
+파일이 삭제되었다거나 데이터를 썼다와 같은 파일을 기록하고 썼던 데이터들을 전부 확인할 수 있다.<br>
 
 
 
