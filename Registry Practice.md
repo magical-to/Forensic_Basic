@@ -74,7 +74,67 @@ Parse를 누르고 결과로 생성될 DB의 이름을 설정한 후, Path는 �
 ![2](https://github.com/user-attachments/assets/48020a00-dae9-4fb3-be68-99397d2954c0)><br>
 그렇게 뽑아낸 db 파일을 DB Browser for SQLite에 업로드한다.<br>
 로그 파일과 UsnJRnl을 넣었기 때문에 각각에 대한 분석 데이터가 생성되어 있는 걸 확인할 수 있고, 로그 파일로부터는 EventTime도 확인할 수 있다.<br>
-파일이 삭제되었다거나 데이터를 썼다와 같은 파일을 기록하고 썼던 데이터들을 전부 확인할 수 있다.<br>
+파일이 삭제되었다거나 데이터를 썼다와 같은 파일을 기록하고 썼던 데이터들을 전부 확인할 수 있다.<br><br><br>
+
+
+**바로가기(LNK)**<br>
+• 'Windows Shortcut’<br>
+• .lnk 확장자<br><br>
+
+생성하는 방법
+• 사용자가 직접 생성<br>
+• 프로그램 설치 시에 생성<br>
+• 운영체제가 자동으로 생성<br><br>
+
+바탕 화면<br>
+• %UserProfile%\Desktop<br><br>
+
+시작 메뉴<br>
+• %ProgramData%\Microsoft\Windows\Start Menu<br>
+• %UserProfile%\Appdata\Roaming\Microsoft\Windows\Start Menu<br><br>
+
+최근 실행<br>
+• %UserProfile%\AppData\Roaming\Microsoft\Windows\Recent<br><br>
+
+빠른 실행<br>
+• %ProgramData%\Microsoft\Internet Explorer\Quick Launch<br>
+• %UserProfile%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch<br>
+• %UserProfile%\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User<br>
+Pinned\TaskBar<br><br>
+
+FTK Imager 이용하여 추출<br>
+• %UserProfile%\Desktop<br>
+• %UserProfile%\AppData\Roaming\Microsoft\Windows\Recent<br><br>
+
+LECmd 이용하여 분석<br>
+• https://ericzimmerman.github.io/#!index.md<br><br>
+
+![image](https://github.com/user-attachments/assets/c93a7c96-2e51-4e79-a412-ee7955d74099)<br>
+아무 간단한 실행파일을 FTK Imager를 통해 추출을 해놓는다.<br>
+.\LECme.exe를 입력하면 사용법이 나온다.<br>
+-f 옵션이나 -d 옵션 중 하나가 있어야 한다. -d는 Recursively, 폴더 아래에 있는 모든 폴더 안에 파일들을 샅샅이 뒤져서 전부 하겠다.<br>
+즉, -d 옵션 아래에는 디렉토리, -f 옵션 아래에는 파일을 주면 된다.<br><br>
+
+
+.\LECmd.exe -f '.\파일.exe - 바로 가기.lnk' 명령어를 입력하게 된다면,<br>
+![1](https://github.com/user-attachments/assets/91fdaed5-cc3e-4fc4-8cb3-94607cd006d0)<br><br>
+
+위 사진이 전부를 담고 있진 않지만, 나온 내용들 일부를 보면, Source File에서 Source라는 것은 우리가 입력한 해당 파일을 Source File이라고 부른다.<br>
+Source File이라는 것은 우리가 분석하고자 하는 바로가기 파일 자체를 의미하는 것이고, 이 바로가기가 원본 파일을 가리키고 있기 때문에 원본 파일에 대한 생성시간, 수정시간, 접근시간을 담고 있다.<br><br>
+
+File Size 또한 원본 파일의 크기를 의미하는 것이고 상대적 경로와 절대적 경로는 다른 경로에 있는 것을 확인할 수 있다.<br><br>
+
+• %UserProfile%\AppData\Roaming\Microsoft\Windows\Recent 위치에서 Recent 폴더도 추출을 한 뒤,<br><br>
+
+.\LECmd.exe -d .\Recent\ --html "추출할 폴더 주소"<br>
+xHTML파일이 있는데 해당 파일을 클릭하면 모든 것들이 분석이 되어서 정리가 되어있는 모습을 확인할 수 있다.<br>
+개인정보 상, 각자가 해보기로 하자.<br><br>
+
+.\LECmd.exe -d .\Recent\ --csv "추출할 폴더 주소"<br>
+csv 형태로도 뽑아볼 수 있는데, 엑셀로 열어주면 정리되어 있는 모습을 확인할 수 있다.(엑셀 파일이 깨져있다면 데이터-데이터 가져오기를 통해서 데이터를 가져오면 정상적으로 나오게 된다.)<br><br>
+
+
+
 
 
 
