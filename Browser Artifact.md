@@ -59,7 +59,7 @@ visit_count는 방문한 횟수, last_visit_time은 마지막 방문 시각이�
 visit_duration은 얼마나 오랫동안 켜놨는지 추축할 수 있다.<br><br><br>
 
 • Chrome 아티팩트 분석<br>
-  • History<br>
+<p>$\bf{\rm{\color{#DD6565}  • History}}$</p><br>
   • Cache<br>
   • Top Sites<br>
   • Shortcuts<br>
