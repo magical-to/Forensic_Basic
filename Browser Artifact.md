@@ -117,3 +117,11 @@ History, Cache, Cookie, Download List 중에서 History를 제외한 3가지는 
   • Carpe Forensics<br><br><br>
 위는 브라우저별 도구 목록이다.<br>
 
+
+
+
+
+
+<br>
+
+
