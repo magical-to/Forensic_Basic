@@ -6,7 +6,7 @@
 • Windows에서는 썸네일 사진들을 미리 생성하여 보관하고 있음<br>
 • %UserProfile%\AppData\Local\Microsoft\Windows\Explorer<br><br>
 
-• thumbcache_{크기}.db
+• thumbcache_{크기}.db<br>
   • thumbcache는 크기에 따라 다른 db 형태로 존재하게 되는데, 이렇게 별도로 존재하는 이유는 큰 아이콘부터 작은 아이콘까지 다양한 형태의 미리 보기를 지원하기 위함이다.<br><br>
 
 **IconCache**<br>
