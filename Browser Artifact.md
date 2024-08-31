@@ -119,5 +119,3 @@ History, Cache, Cookie, Download List 중에서 History를 제외한 3가지는 
 
 
 <br>
-
-
