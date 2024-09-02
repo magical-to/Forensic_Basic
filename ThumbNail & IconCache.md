@@ -85,8 +85,6 @@ Digital Forensics
 • 시간에 따른 사용자의 행위 추적
 • 응용프로그램의 구체적인 사용 시각을 알 수 있음
 
-Windows Timeline - Practice
-Digital Forensics
 
 • 저장 경로 확인
 • 계정명 확인
