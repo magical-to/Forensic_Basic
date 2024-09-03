@@ -1,4 +1,4 @@
-**Event Logs**<br><br>
+![image](https://github.com/user-attachments/assets/793bfa74-69c4-47a8-93c1-6c67c55b8165)**Event Logs**<br><br>
 
 • 로그란<br>
  • 컴퓨터를 이용한 기록 등이 컴퓨터 내에 남아있는 것<br>
@@ -119,101 +119,78 @@ VSS - Practice<br><br>
 
 CMD를 관리자 권한으로 작동하고 vssadmin list shadows 명령어를 치게 되면 두 개의 복사본이 생긴 걸 확인할 수 있다.<br><br>
 
+**Windows Search**<br><br>
+
 • Windows 검색 기능<br>
  • 작업표시줄 아이콘 클릭 or Windows + S 단축키<br><br>
 
 • **Windows Indexing**<br>
- • 검색 기능을 구현하기 위해 미리 Indexing 작업을 수행함
- • 파일 이름과 전체 파일 경로를 포함하여 파일의 모든 속성이 인덱싱됨
- • 텍스트가 포함된 파일의 경우, 콘텐츠가 인덱싱됨
+ • 검색 기능을 구현하기 위해 미리 Indexing 작업을 수행함<br>
+ • 파일 이름과 전체 파일 경로를 포함하여 파일의 모든 속성이 인덱싱됨<br>
+ • 텍스트가 포함된 파일의 경우, 콘텐츠가 인덱싱됨<br><br>
 
-Windows Search
-Digital Forensics
+• Windows.edb<br>
+ • Windows Search에 사용하기 위한 Indexing 정보 저장<br>
+ • 경로: %ProgramData%\Microsoft\Search\Data\Applications\Windows<br><br>
 
-• Windows.edb
-• Windows Search에 사용하기 위한 Indexing 정보 저장
-• 경로: %ProgramData%\Microsoft\Search\Data\Applications\Windows
+• Windows.edb 수집<br>
+ • 온라인 상태에서 수집할 때는 Windows Search (Wsearch) 서비스를 종료시켜야 함<br>
+ • 서비스 동작 중 복사하거나 포렌식 도구로 수집 시 정상적인 구조가 아닌 “Dirty” 상태로 수집됨<br>
+ • Dirty: 응용프로그램이 데이터베이스를 사용하는 중의 상태<br>
+ • Clean: 데이터베이스 API를 사용하여 트랜잭션을 모두 처리한 상태<br><br>
 
-• Windows.edb 수집
-• 온라인 상태에서 수집할 때는 Windows Search (Wsearch) 서비스를 종료시켜야 함
-• 서비스 동작 중 복사하거나 포렌식 도구로 수집 시 정상적인 구조가 아닌 “Dirty” 상태로 수집됨
-• Dirty: 응용프로그램이 데이터베이스를 사용하는 중의 상태
-• Clean: 데이터베이스 API를 사용하여 트랜잭션을 모두 처리한 상태
+• Windows.edb 수집 과정<br>
+ • Windows Search 서비스 ‘사용 안 함’<br>
+ • Windows Search 서비스 ‘중지’<br>
+ • 이후에 Windows.edb 복사<br><br>
 
-Windows Search - Practice
-Digital Forensics
+• Clean shutdown 확인<br>
+ • esentutl /m <파일이름> | findstr State<br>
+ • State: Clean Shutdown 확인<br><br>
 
-• Windows.edb 수집 과정
-• Windows Search 서비스 ‘사용 안 함’
-• Windows Search 서비스 ‘중지’
-• 이후에 Windows.edb 복사
+• ESEDatabaseView<br>
+ • ESE Database를 보여주는 도구<br><br>
 
-• Clean shutdown 확인
-• esentutl /m <파일이름> | findstr State
-• State: Clean Shutdown 확인
+• WinSearchDBAnalyzer<br>
+ • https://moaistory.blogspot.com/2018/10/winsearchdbanalyzer.html<br><br>
 
-Windows Search - Practice
-Digital Forensics
+![image](https://github.com/user-attachments/assets/081d6035-24bb-40a0-8661-b71b44c49539)<br>
+노말한 레코드를 파싱할 수도 있고, 삭제된 레코드를 리커버리 할 수도 있다.<br><br>
 
-• ESEDatabaseView
-• ESE Database를 보여주는 도구
+• **휴지통(Recycle Bin)<br>**
+ • 파일을 삭제하고, 복원하거나 영구 삭제할 수 있음<br><br>
 
-• WinSearchDBAnalyzer
-• https://moaistory.blogspot.com/2018/10/winsearchdbanalyzer.html
+• 휴지통 폴더 확인<br>
+ • 파일탐색기 보기 설정 변경(숨김 폴더 표시)<br><br>
 
-Recycle Bin
-04
+• 휴지통 폴더는 볼륨 단위로 생성<br>
+ • 로컬 디스크로 인식되는 경우에 생성<br>
+ • USB 등 이동식 디스크, 네트워크 드라이브 등은 생성되지 않음<br><br>
 
-Recycle Bin
-Digital Forensics
+•”휴지통” 아이콘<br>
+ • 모든 볼륨의 휴지통 폴더를 통합하여 보여줌<br>
+ • 그러나 하나의 폴더로 존재하는 것은 아님<br><br>
 
-• 휴지통(Recycle Bin)
-• 파일을 삭제하고, 복원하거나 영구 삭제할 수 있음
+• 휴지통 아티팩트(파일 삭제 시)<br>
+ • 휴지통 폴더 경로: <Volume>\$Recycle.Bin\<SID>\<br>
+ • 삭제된 파일: $R<임의문자열 6자리>.<원본 파일 확장자><br>
+ • 삭제 관련 메타데이터: $I<임의문자열 6자리>.<원본 파일 확장자><br>
+  • 원본 파일의 경로, 휴지통으로 삭제된 시각 등<br><br>
+  
+![8](https://github.com/user-attachments/assets/2f9bf13f-0d08-4de2-b4b2-b5e38c6bb94d)<br><br>
 
-• 휴지통 폴더 확인
-• 파일탐색기 보기 설정 변경
+• 휴지통 아티팩트(파일 복원시)<br>
+ • 삭제된 파일($R)은 사라짐<br>
+ • 삭제 관련 메타데이터($I)는 남아 있음<br>
+![9](https://github.com/user-attachments/assets/a004634e-258a-4d4e-af19-003257dd4149)<br><br>
 
-Recycle Bin
-Digital Forensics
+• 휴지통 아티팩트(휴지통 비우기)<br>
+ • 삭제된 파일($R) 및 삭제 관련 메타데이터($I) 모두 삭제<br><br>
 
-• 휴지통 폴더는 볼륨 단위로 생성
-• 로컬 디스크로 인식되는 경우에 생성
-• USB 등 이동식 디스크, 네트워크 드라이브 등은 생성되지 않음
-
-•
-”휴지통” 아이콘
-• 모든 볼륨의 휴지통 폴더를 통합하여 보여줌
-• 그러나 하나의 폴더로 존재하는 것은 아님
-
-Recycle Bin
-Digital Forensics
-
-• 휴지통 아티팩트(파일 삭제 시)
-• 휴지통 폴더 경로: <Volume>\$Recycle.Bin\<SID>\
-• 삭제된 파일: $R<임의문자열 6자리>.<원본 파일 확장자>
-• 삭제 관련 메타데이터: $I<임의문자열 6자리>.<원본 파일 확장자>
-• 원본 파일의 경로, 휴지통으로 삭제된 시각 등
-
-Recycle Bin
-Digital Forensics
-
-• 휴지통 아티팩트(파일 복원시)
-• 삭제된 파일($R)은 사라짐
-• 삭제 관련 메타데이터($I)는 남아 있음
-
-Recycle Bin
-Digital Forensics
-
-• 휴지통 아티팩트(휴지통 비우기)
-• 삭제된 파일($R) 및 삭제 관련 메타데이터($I) 모두 삭제
-
-Recycle Bin - Practice
-Digital Forensics
-
-• 휴지통 아티팩트 실습
-• 테스트용 폴더 및 파일 생성
-• 1) 삭제 2) 복구 3) 휴지통 비우기 실습
+• 휴지통 아티팩트 실습<br>
+ • 테스트용 폴더 및 파일 생성<br>
+ • 1) 삭제 2) 복구 3) 휴지통 비우기 실습<br>
 
 • 메타데이터 분석
-• Windows File Analyzer, https://www.mitec.cz/wfa.html
-• 파일 경로, 삭제된 시점, 크기 확인
+ • Windows File Analyzer, https://www.mitec.cz/wfa.html
+ • 파일 경로, 삭제된 시점, 크기 확인
