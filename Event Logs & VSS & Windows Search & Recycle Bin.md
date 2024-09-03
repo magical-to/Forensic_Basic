@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/793bfa74-69c4-47a8-93c1-6c67c55b8165)**Event Logs**<br><br>
+**Event Logs**<br><br>
 
 • 로그란<br>
  • 컴퓨터를 이용한 기록 등이 컴퓨터 내에 남아있는 것<br>
