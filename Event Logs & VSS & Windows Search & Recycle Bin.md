@@ -86,57 +86,46 @@ Time Zone Sync이라는 인터넷으로부터 싱크를 맞추는 애플리케�
 
 다른 데이터를 보고 오면 성공적으로 로그인되었다는 데이터도 남는 것을 볼 수 있다.<br><br>
 
- 
+**VSS**<br><br>
 
-VSS
-02
+• VSS(Volume Shadow Copy Service)<br>
+ • 특정한 시각의 파일, 폴더의 복사본이나 볼륨의 스냅샷을 저장해두고 복원할 수 있는 기능<br><br>
 
-VSS
-Digital Forensics
+• 시스템 복원 기능<br>
+ • 컴퓨터 전체를 복원 지점으로 되돌리기<br>
+ • 특정 파일/폴더를 이전 버전으로 되돌리기<br><br>
 
-• VSS(Volume Shadow Copy Service)
-• 특정한 시각의 파일, 폴더의 복사본이나 볼륨의 스냅샷을 저장해두고 복원할 수 있는 기능
+• VSS 설정<br>
+ • 복원 지점 만들기 검색<br>
+ • 구성 -> 시스템 보호 사용 설정<br>
+   구성 -> 디스크 공간 설정<br>
+ • 만들기 -> 시스템 복원<br><br>
 
-• 시스템 복원 기능
-• 컴퓨터 전체를 복원 지점으로 되돌리기
-• 특정 파일/폴더를 이전 버전으로 되돌리기
-
-VSS
-Digital Forensics
-
-• VSS 설정
-• 복원 지점 만들기 검색
-• 구성 à 시스템 보호 사용 설정
-구성 à 디스크 공간 설정
-• 만들기 à 시스템 복원
-
-VSS - Practice
-Digital Forensics
+VSS - Practice<br><br>
 
 • VSS 확인
-• vssadmin list shadows
-• mklink /d <링크폴더> <섀도 복사본 볼륨>
-• 파일 탐색기로 접근하여 확인
+ • vssadmin list shadows<br>
+ • mklink /d(링크폴더)(섀도 복사본 볼륨)<br>
+ • 파일 탐색기로 접근하여 확인<br><br>
 
-• ShadowExplorer
-• https://www.shadowexplorer.com/downloads.html
+• ShadowExplorer<br>
+ • https://www.shadowexplorer.com/downloads.html<br><br><br>
 
-Windows Search
-03
 
-Windows Search
-Digital Forensics
+시스템 속성 -> 시스템 보호 -> 시스템 복원을 들어가면 복원 지점이 만들어져 있는 것이 보이고 다음 버튼을 누르면 영향을 받는 프로그램 검색<br>
+이라고 나와있늗네 이 복원 지점으로부터 현재 내 시스템이 어떤 것이 변경되었는지에 대한 정보이다.<br><br>
 
-• Windows 검색 기능
-• 작업표시줄 아이콘 클릭 or Windows + S 단축키
+해당 정보에 보여지는 프로그램은 복원을 하면 해당 프로그램이 제거된다고 말하고 있는 것인데 이는 옛날 복원 시점에 비해 프로그램이 새로 설치되었다라는 의미를 가지고 있는 것이다.<br><br>
 
-Windows Search
-Digital Forensics
+CMD를 관리자 권한으로 작동하고 vssadmin list shadows 명령어를 치게 되면 두 개의 복사본이 생긴 걸 확인할 수 있다.<br><br>
 
-• Windows Indexing
-• 검색 기능을 구현하기 위해 미리 Indexing 작업을 수행함
-• 파일 이름과 전체 파일 경로를 포함하여 파일의 모든 속성이 인덱싱됨
-• 텍스트가 포함된 파일의 경우, 콘텐츠가 인덱싱됨
+• Windows 검색 기능<br>
+ • 작업표시줄 아이콘 클릭 or Windows + S 단축키<br><br>
+
+• **Windows Indexing**<br>
+ • 검색 기능을 구현하기 위해 미리 Indexing 작업을 수행함
+ • 파일 이름과 전체 파일 경로를 포함하여 파일의 모든 속성이 인덱싱됨
+ • 텍스트가 포함된 파일의 경우, 콘텐츠가 인덱싱됨
 
 Windows Search
 Digital Forensics
