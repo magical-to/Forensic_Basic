@@ -82,6 +82,8 @@ reader_sl.exe 프로세스를 통해서 악성 PDF 문서를 읽었고 그 취�
 virustotal 사이트에 procdump를 통해 뽑아내었던 executable.1640.exe 파일을 VirusTotal에 업로드 해보면 이전에 올렸던 과는 확연한 차이를 볼 수 있다.<br><br><br>
 
 ![29](https://github.com/user-attachments/assets/328f8aee-7d9b-4911-b806-e8cb832ec203)<br>
-사진과 같이 6개의 exe parents가 존재하고, 9개의 연결된 도메인이 있는 등 다양한 정보를 볼 수 있다.
+사진과 같이 6개의 exe parents가 존재하고, 9개의 연결된 도메인이 있는 등 다양한 정보를 볼 수 있다.<br><br>
+
+nice
 
 
