@@ -194,4 +194,3 @@ CMD를 관리자 권한으로 작동하고 vssadmin list shadows 명령어를 �
 • 메타데이터 분석
  • Windows File Analyzer, https://www.mitec.cz/wfa.html
  • 파일 경로, 삭제된 시점, 크기 확인
-
