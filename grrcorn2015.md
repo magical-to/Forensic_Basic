@@ -6,7 +6,6 @@ If need english translation, contact me, thx.<br><br>
 command in Windows PowerShell<br>
 메모리 덤프를 보고 Volatility가 어떤 운영체제의 메모리 덤프인지 판단 -> 어떤 운영체제인지?에 대한 값이 앞으로의 모든 분석에 사용될 예정<br><br><br>
 
-
 <br>
 ![2](https://github.com/user-attachments/assets/a134f40c-3e20-46a2-ae70-dd0c2c58bb6c)<br>
 우선, 이전과 같이 imageinfo 명령어를 통해 운영체제를 식별할 예정이다.<br>
