@@ -12,7 +12,6 @@ command in Windows PowerShell<br>
 ![4](https://github.com/user-attachments/assets/2bc2f774-933f-4a1f-b8ee-f999a8a0be16)
 <br><br>
 
-
 ![5](https://github.com/user-attachments/assets/02abcbc0-4202-4d78-9991-6cfc3640c096)<br>
 일단 각 로그들을 전부 출력하여 준다.<br>
 
