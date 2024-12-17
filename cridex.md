@@ -85,6 +85,6 @@ virustotal 사이트에 procdump를 통해 뽑아내었던 executable.1640.exe �
 ![29](https://github.com/user-attachments/assets/328f8aee-7d9b-4911-b806-e8cb832ec203)<br>
 사진과 같이 6개의 exe parents가 존재하고, 9개의 연결된 도메인이 있는 등 다양한 정보를 볼 수 있다.<br><br>
 
-nice
+nice!
 
 
